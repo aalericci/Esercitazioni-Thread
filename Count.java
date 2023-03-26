@@ -3,6 +3,7 @@ public class Count extends Thread{
 	private volatile boolean bb=true;
 	private volatile boolean wait=false;
 	Timer t;
+	
 	public Count(Timer t){
 		this.t=t;
 	}
@@ -12,7 +13,6 @@ public class Count extends Thread{
 			while(wait){
 
 			}
-			System.out.println(bb);
 			try {
 				tempo++;
 				Timer.label.setText("Secondi: "+tempo); 
@@ -25,7 +25,6 @@ public class Count extends Thread{
 
 	public void termina(){
 		bb=false;
-		System.out.println("BB Termina");
 	}
 
 	public void attendi(){
